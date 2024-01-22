@@ -13,7 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
-      - name: Step 1 - Create a temporary artifact downloads folder
+      - name: Step 1 - Create a artifact downloads folder
         run: |
           mkdir reports
           cd reports && npm run cy:report          
