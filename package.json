@@ -7,7 +7,8 @@
     "test": "cypress run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:record": "cypress run --record --key"
+    "cypress:record": "cypress run --record --key",
+    "cy:report": "node ./cypress/report.js"
   },
   "keywords": [],
   "author": "",
