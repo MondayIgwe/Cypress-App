@@ -5,6 +5,8 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      Like: please like
     steps:
       - name: Checkout
         uses: actions/checkout@v4
