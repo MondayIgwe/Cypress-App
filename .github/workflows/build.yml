@@ -6,8 +6,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     env:
-      Like: please like
+      Like: please like and share some nice things
     steps:
+      - name: get custom environment variables
+        run: echo "$Like"
       - name: Checkout
         uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
