@@ -1,6 +1,14 @@
 name: Cypress Tests
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+      tags:
+        description: "Test scenario tags"
 
 jobs:
   cypress-run:
@@ -10,18 +18,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
       - name: Step 1 - Create a artifact download
         run: |
           mkdir reports
-          cd reports && npm run cy:report          
+          cd reports && npm run cy:report
 
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v4
-        with: 
+        with:
           name: assets-for-download
           path: reports
-      
