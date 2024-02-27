@@ -8,12 +8,9 @@ jobs:
     env:
       Like: please like and share some nice things
     steps:
-      - name: get custom environment variables
-        run: echo "$Like"
       - name: Checkout
         uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+        
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
